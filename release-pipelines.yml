@@ -12,7 +12,7 @@ pool:
 
 variables:
   containerRegistry: 'mateuszacr.azurecr.io'
-  imageRepository: 'myazurepipelinesdemo'
+  imageRepository: 'mattixmybasicwebapidemo'
   tag: 'latest'
 
 steps:
