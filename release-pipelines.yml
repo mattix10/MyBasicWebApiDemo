@@ -15,6 +15,7 @@ variables:
   imageRepository: 'myazurepipelinesdemo'
   tag: 'latest'
 
+steps:
 - task: AzureAppServiceSettings@1
   displayName: Update settings
   inputs:
@@ -22,23 +23,9 @@ variables:
     appName: 'azure-pipeline-demo'
     resourceGroupName: 'devops-lab'
     appSettings: |
-    [
-      {
-        "name": "DOCKER_REGISTRY_SERVER_URL",
-        "value": "$(containerRegistry)",
-        "slotSetting": false
-      },
-      {
-        "name": "DOCKER_REGISTRY_SERVER_USERNAME",
-        "value": "mateuszacr",
-        "slotSetting": false
-      },
-      {
-        "name": "DOCKER_REGISTRY_SERVER_PASSWORD",
-        "value": "$(acrpassword)",
-        "slotSetting": false
-      }
-    ]
+      DOCKER_REGISTRY_SERVER_URL=$(containerRegistry)
+      DOCKER_REGISTRY_SERVER_USERNAME=mateuszacr
+      DOCKER_REGISTRY_SERVER_PASSWORD=$(acrpassword)
 - task: AzureWebAppContainer@1
   inputs:
     azureSubscription: 'Azure subscription 1(1b42a63b-4856-40ea-8f31-5a01d64c284f)'
