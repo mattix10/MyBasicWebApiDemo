@@ -20,7 +20,7 @@ steps:
   displayName: Update settings
   inputs:
     azureSubscription: 'Azure subscription 1(1b42a63b-4856-40ea-8f31-5a01d64c284f)'
-    appName: 'azure-pipeline-demo'
+    appName: 'azure-pipeline-demo2'
     resourceGroupName: 'testwebapi'
     appSettings: >
       {
